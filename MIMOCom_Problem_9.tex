@@ -1,0 +1,24 @@
+\section*{Problem 9 - BPSK error rate in an MRC system over Nakagami-m channel}
+\begin{align*}
+	& \text{SNR distribution for Nakagami-m fading}\\
+	& \mathrm{pdf:}\quad P_\gamma\left(x\right)=\frac{m^mx^{m-1}}{\gamma^{-m}\Gamma\left(m\right)}\mathrm{exp}\left(-\frac{mx}{\bar{\gamma}}\right)
+	\begin{cases}
+		m & \text{fading parameter} \\
+		\Gamma\left(m\right) & \text{Gamma function }=(m-1)! \\
+		\bar{\gamma} & \text{average branch SNR}
+	\end{cases} \\
+	&\rightarrow\text{Laplace transform} \\
+	&\mathcal{L}\left(P_\gamma\left(x\right)\right)=M_\gamma\left(s\right)\quad\rightarrow\quad\text{moment generating function (mgs)} \\
+	&\rightarrow M_\gamma\left(s\right)=\left(1-\frac{s\bar{\gamma}}{m}\right)^{-m}\quad m=1\quad\Rightarrow\quad\text{Rayleigh} \\
+	&\gamma_\mathrm{total}^\mathrm{MRC}=\sum\limits_{n=1}^{N_R}\gamma_n\qquad\gamma_n:\text{ branch SNR} \\
+	&\text{Probability density function pdf of total SNR is convolution of branch SNR.} \\
+	&\text{Convolution in time domain $\rightarrow$ multiplication in frequency domain.} \\
+	&\text{i.i.d fading $\rightarrow$ branch SNR independent} \\
+	&\quad\rightarrow M_{\gamma_\mathrm{total}}\left(s\right)=\prod\limits_{n=1}^{N_R}M_{\gamma_n}\left(s\right)=\left(M_\gamma\left(s\right)\right)^{N_R} \\
+	&\quad\rightarrow M_{\gamma_\mathrm{total}}\left(s\right)=\left(1-\frac{s\bar{\gamma}}{m}\right)^{-mN_R} \\
+	&\text{from lecture notes:} \\
+	&\rightarrow \bar{P}_e=\frac{a}{\pi}\int\limits_0^{\frac{\pi}{2}}{M_\gamma}_\mathrm{total}\left(\frac{b}{2\sin^2\Theta}\right)\mathrm{d}\Theta \\
+	&\text{$a$, $b$ are parameters depending on modulation scheme} \\
+	&\rightarrow\text{for BPSK: $a=1$, $b=2$} \\
+	&\rightarrow\quad\boxed{\bar{P}_e=\frac{1}{\pi}\int\limits_0^{\frac{\pi}{2}}\left(1-\frac{\bar{\gamma}}{m\sin^2\Theta}\right)^{-mN_R}\mathrm{d}\Theta}
+\end{align*}

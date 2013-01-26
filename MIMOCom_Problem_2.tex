@@ -1,0 +1,129 @@
+\section*{Problem 2 - Matrix Decompositions}
+\begin{align*}
+	\mathbf{A}=
+	\begin{pmatrix}
+	1 & 0,5 & -0,5 \\
+	-1 & 1 & -1
+	\end{pmatrix}
+\end{align*}
+
+\subsection*{a)}
+\begin{align*}
+	&\rank\left(\mathbf{A}\right):\quad\alpha\begin{pmatrix}1\\0,5\\-0,5\end{pmatrix}+\beta\begin{pmatrix}-1\\1\\-1\end{pmatrix}\overset{!}{=}0& \\
+	&\text{we set $\beta=1$ w/o loss of generality}& \\
+	&\rightarrow\quad\alpha-1=0\quad\Rightarrow\quad\alpha=1& \\
+	&\quad 0,5\alpha+1=0\quad\Rightarrow\quad\alpha=-2\quad\lightning& \\
+	&\Rightarrow\rank\left(\mathbf{A}\right)=2&
+\end{align*}
+
+\subsection*{b)}
+\begin{align*}
+	&\mathbf{A=U\Sigma V}^{H}\qquad\svd\left(\mathbf{A}\right)\quad\text{(singular value decomposition)}& \\
+	&\tilde{\mathbf{A}}=\mathbf{AA}^{T}=
+	\begin{pmatrix}
+	1,5 & 0 \\
+	0 & 3
+	\end{pmatrix}& \\
+	&\det\left(\lambda\mathbf{I-A}\right)=0\quad\rightarrow\quad\det\left|
+	\begin{pmatrix}
+	\lambda-1,5 & 0 \\
+	0 & \lambda-3
+	\end{pmatrix}\right|=0& \\
+	&\qquad\Rightarrow\quad\lambda_{1}=1,5,\quad\lambda_{2}=3& \\
+	&\text{Eigenvectors $\mathbf{Ev}$:}& \\
+	&\mathbf{\tilde{A}Ev}=\lambda\mathbf{Ev}& \\
+	&\text{for $\lambda_{1}=1,5$:}& \\
+	&\qquad\rightarrow\quad
+	\begin{pmatrix}
+	1,5 & 0 \\
+	0 & 3
+	\end{pmatrix}\begin{pmatrix}v_{1}\\v_{2}\end{pmatrix}=1,5\begin{pmatrix}v_{1}\\v_{2}\end{pmatrix}& \\
+	&\qquad\rightarrow 1,5v_{1}=1,5v_{2},\quad 3v_{2}=1,5v_{1}& \\
+	&\qquad\Rightarrow v_{1}=1,\quad v_{2}=0& \\
+	&\qquad\Rightarrow\mathbf{Ev}_{1}=\begin{pmatrix}1\\0\end{pmatrix}& \\
+	&\text{for $\lambda_{2}=3$:}& \\
+	&\qquad\rightarrow\quad
+	\begin{pmatrix}
+	1,5 & 0 \\
+	0 & 3
+	\end{pmatrix}\begin{pmatrix}u_{1}\\u_{2}\end{pmatrix}=3\begin{pmatrix}u_{1}\\u_{2}\end{pmatrix}& \\
+	&\qquad\rightarrow 1,5u_{1}=3u_{2},\quad 3u_{2}=3u_{1}& \\
+	&\qquad\Rightarrow\mathbf{Ev}_{2}=\begin{pmatrix}0\\1\end{pmatrix}& \\
+	&\mathbf{A=U\Sigma V}^{H},\quad\mathbf{U}=\begin{pmatrix}\mathbf{Ev_{1}} & \mathbf{Ev_{2}} & \ldots & \mathbf{Ev_{N}}\end{pmatrix}=
+	\begin{pmatrix}
+	1 & 0 \\
+	0 & 1
+	\end{pmatrix}&
+\end{align*}
+
+\subsection*{c)}
+\begin{align*}
+	&S_{u}^{2}:\text{ Eigenvalue of }\mathbf{XX}^{H}& \\
+	&S_{u}:\text{ singular value of }\mathbf{X}& \\
+	&\tr\left(\mathbf{XX}^{H}\right)=\sum_{u}\lambda_{u}\left(\mathbf{XX}^{H}\right)=\sum_{u}S_{u}^{2}&
+\end{align*}
+
+\subsection*{d)}
+\begin{align*}
+	&\text{QR-decomposition}\quad\rightarrow\quad\mathbf{A=QR}& \\
+	&\qquad\text{with $\mathbf{Q}$ unitary, $\mathbf{R}$ upper triangular matrix}& \\
+	&\text{Gram-Schmidt:}& \\
+	&\mathbf{A}=
+	\begin{bmatrix}
+	1 & 0,5 & -0,5 \\
+	-1 & 1 & -1 
+	\end{bmatrix}=\begin{bmatrix}\mathbf{a}_{1}&\mathbf{a}_{2}&\mathbf{a}_{3}\end{bmatrix}& \\
+	&\mathbf{u}_{1}=\mathbf{a}_{1}=\begin{bmatrix}1\\-1\end{bmatrix}& \\
+	&\qquad\rightarrow\quad\mathbf{e}_{1}=\frac{\mathbf{u}_{1}}{\|\mathbf{u}_{1}\|}=\frac{1}{\sqrt{2}}\begin{bmatrix}1\\-1\end{bmatrix}& \\
+	&\mathbf{u}_{2}=\mathbf{a}_{2}-\left(\mathbf{a}_{2}\mathbf{e}_{1}\right)\mathbf{e}_{1}=\begin{bmatrix}0,5\\1\end{bmatrix}-\left(\begin{bmatrix}0,5\\1\end{bmatrix}\begin{bmatrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{bmatrix}\right)=\begin{bmatrix}0,75\\0,75\end{bmatrix}& \\
+	&\qquad\rightarrow\quad\mathbf{e}_{2}=\frac{\mathbf{u}_{2}}{\|\mathbf{u}_{2}\|}=\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix}& \\
+	&\mathbf{u}_{3}=\mathbf{a}_{3}-\left(\mathbf{a}_{3}\mathbf{e}_{1}\right)\mathbf{e}_{1}-\left(\mathbf{a}_{3}\mathbf{e}_{2}\right)\mathbf{e}_{2}=& \\
+	&\qquad=\begin{bmatrix}-0,5\\-1\end{bmatrix}-\left(\begin{bmatrix}-0,5\\-1\end{bmatrix}\begin{bmatrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{bmatrix}\right)\begin{bmatrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{bmatrix}-\left(\begin{bmatrix}-0,5\\-1\end{bmatrix}\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix}\right)\begin{bmatrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{bmatrix}& \\
+	&\qquad=\begin{bmatrix}-0,5\\-1\end{bmatrix}+\begin{bmatrix}-0,25\\0,25\end{bmatrix}+\begin{bmatrix}0,75\\0,75\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}& \\
+	&\qquad\rightarrow\quad\mathbf{e}_{3}=\frac{\mathbf{u}_{3}}{\|\mathbf{u}_{3}\|}=\begin{bmatrix}0\\0\end{bmatrix}& \\
+	&\mathbf{Q}=\begin{bmatrix}\mathbf{e}_{1}&\mathbf{e}_{2}&\mathbf{e}_{3}\end{bmatrix}=
+	\begin{bmatrix}
+	\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0 \\
+	\frac{1}{-\sqrt{2}} & \frac{1}{\sqrt{2}} & 0
+	\end{bmatrix}& \\
+	&\mathbf{R}=
+	\begin{bmatrix}
+	\mathbf{u}_{1}\mathbf{e}_{1} & \mathbf{u}_{2}\mathbf{e}_{1} & \mathbf{u}_{3}\mathbf{e}_{1} \\
+	0 & \mathbf{u}_{2}\mathbf{e}_{2} & \mathbf{u}_{3}\mathbf{e}_{2} \\
+	0 & 0 & \mathbf{u}_{3}\mathbf{e}_{3}
+	\end{bmatrix}=
+	\begin{bmatrix}
+	\frac{2}{\sqrt{2}} & -\frac{1}{2\sqrt{2}} & \frac{1}{2\sqrt{2}} \\
+	0 & \frac{3}{2\sqrt{2}} & \frac{3}{2\sqrt{2}} \\
+	0 & 0 & 0
+	\end{bmatrix}
+\end{align*}
+
+\subsection*{e)}
+\begin{align*}
+	&\mathbf{B}=
+	\begin{bmatrix}
+	-1 & 1 & -1 \\
+	-0,5 & 0,5 & 1
+	\end{bmatrix},&&\mathbf{A}=
+	\begin{bmatrix}
+	1 & 0,5 & -0,5 \\
+	-1 & 1 & -1
+	\end{bmatrix}& \\
+	&\mathbf{B=QL}&&\text{$\mathbf{B}$ is updown and left-right flipped version of $\mathbf{A}$}& \\
+	&& &\mathbf{B}=\UD\left(\LR\left(\mathbf{A}\right)\right)& \\
+	&\mathbf{A=Q}_{A}\mathbf{R}_{A}& &\rightarrow\mathbf{B}=\UD\left(\LR\left(\mathbf{Q}_{A}\mathbf{R}_{A}\right)\right)=\mathbf{Q}_{B}\mathbf{L}_{B}& \\
+	&& &\qquad\mathbf{Q}_{B}=\UD\left(\LR\left(\mathbf{Q}_{A}\right)\right)& \\
+	&& &\qquad\mathbf{L}_{B}=\UD\left(\LR\left(\mathbf{R}_{A}\right)\right)& \\
+	&\mathbf{Q}_{B}=\frac{1}{\sqrt{2}}
+	\begin{bmatrix}
+	0 & 1 & -1 \\
+	0 & 1 & 1
+	\end{bmatrix}&
+	&\mathbf{L}_{B}=\frac{1}{\sqrt{2}}
+	\begin{bmatrix}
+	0 & 0 & 0 \\
+	-1,5 & 1,5 & 0 \\
+	0,5 & 0,5 & 2
+	\end{bmatrix}&
+\end{align*}

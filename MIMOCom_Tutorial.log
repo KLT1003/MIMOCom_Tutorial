@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=latex 2013.1.17)  25 JAN 2013 13:02
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=latex 2013.1.17)  26 JAN 2013 19:16
 entering extended mode
 **MIMOCom_Tutorial.tex
 ("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_Tutorial.tex"
@@ -389,65 +389,70 @@ paths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
 )))
 ("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_Tutorial.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_title.tex"
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
 
 (D:\Programme\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
 
 (D:\Programme\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 27.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 4.
 
 (D:\Programme\MiKTeX\tex\latex\stmaryrd\ustmry.fd)
 
 LaTeX Warning: No \author given.
 
-
-Overfull \hbox (88.74419pt too wide) in paragraph at lines 88--88
+) ("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_Problem_1.tex
+"
+Overfull \hbox (88.74419pt too wide) in paragraph at lines 60--60
 [] 
  []
 
 
-Overfull \hbox (30.6442pt too wide) in paragraph at lines 95--95
+Overfull \hbox (30.6442pt too wide) in paragraph at lines 67--67
 [] 
  []
 
 [1
 
 ]
-Overfull \hbox (56.34937pt too wide) in paragraph at lines 169--169
+Overfull \hbox (56.34937pt too wide) in paragraph at lines 141--141
 [] 
  []
 
 [2] [3]
-Overfull \hbox (79.4261pt too wide) in paragraph at lines 262--262
+Overfull \hbox (79.4261pt too wide) in paragraph at lines 234--234
 [] 
  []
 
-[4] [5] [6]
-Overfull \hbox (13.55577pt too wide) in paragraph at lines 447--447
+[4])
+("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_Problem_2.tex"
+[5] [6]
+Overfull \hbox (13.55577pt too wide) in paragraph at lines 129--129
 [] 
  []
 
-[7]
-Overfull \hbox (38.31677pt too wide) in paragraph at lines 461--461
+[7])
+("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_Problem_3.tex"
+Overfull \hbox (38.31677pt too wide) in paragraph at lines 12--12
 [] 
  []
 
@@ -474,7 +479,7 @@ File: frequencyselective_channel_2.eps Graphic file (type eps)
 <frequencyselective_channel_2.eps>
 File: waterfilling.eps Graphic file (type eps)
  <waterfilling.eps>
-Overfull \hbox (72.73927pt too wide) in paragraph at lines 487--487
+Overfull \hbox (72.73927pt too wide) in paragraph at lines 38--38
 [] 
  []
 
@@ -488,29 +493,32 @@ Missing character: There is no Ÿ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no Ÿ in font cmr10!
 
-Overfull \hbox (57.58095pt too wide) in paragraph at lines 514--514
+Overfull \hbox (57.58095pt too wide) in paragraph at lines 65--65
 [] 
  []
 
-File: MIMO_channel.eps Graphic file (type eps)
-<MIMO_channel.eps>
+) ("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_Problem_4.tex
+"
 File: MIMO_channel.eps Graphic file (type eps)
  <MIMO_channel.eps>
-Overfull \hbox (21.33653pt too wide) in paragraph at lines 550--550
+File: MIMO_channel.eps Graphic file (type eps)
+ <MIMO_channel.eps>
+Overfull \hbox (21.33653pt too wide) in paragraph at lines 35--35
 [] 
  []
 
-[10]
-Overfull \hbox (48.19511pt too wide) in paragraph at lines 591--591
+[10])
+("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_Problem_5.tex"
+Overfull \hbox (48.19511pt too wide) in paragraph at lines 40--40
 [] 
  []
 
 [11]
-Overfull \hbox (39.09013pt too wide) in paragraph at lines 615--615
+Overfull \hbox (39.09013pt too wide) in paragraph at lines 64--64
 [] 
  []
 
-[12]
+[12])
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¶ in font cmr10!
 Missing character: There is no Ã in font cmr10!
@@ -528,20 +536,69 @@ Missing character: There is no ¶ in font cmr7!
 Missing character: There is no Ã in font cmr5!
 Missing character: There is no ¶ in font cmr5!
 
-Overfull \hbox (78.22289pt too wide) in paragraph at lines 621--621
+Overfull \hbox (78.22289pt too wide) in paragraph at lines 36--36
 [] 
  []
 
-[13]
+("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_Problem_8_1.tex
+"
+File: rx_chain.eps Graphic file (type eps)
+ <rx_chain.eps>
+File: rx_chain.eps Graphic file (type eps)
+ <rx_chain.eps> [13]
+File: integration.eps Graphic file (type eps)
+ <integration.eps>
+File: integration.eps Graphic file (type eps)
+ <integration.eps>
+Overfull \hbox (54.72229pt too wide) in paragraph at lines 22--22
+[] 
+ []
+
+[14]
+Overfull \hbox (17.43202pt too wide) in paragraph at lines 41--41
+[] 
+ []
+
+[15])
+("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_Problem_8_2.tex
+"
+File: MIMO_receiver.eps Graphic file (type eps)
+ <MIMO_receiver.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+[16]
+Overfull \hbox (19.48631pt too wide) in paragraph at lines 31--31
+[] 
+ []
+
+[17])
+("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_Problem_9.tex"
+Overfull \hbox (25.97295pt too wide) in paragraph at lines 24--24
+[] 
+ []
+
+[18])
+("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_Problem_10.tex"
+File: MIMO_receiver_2.eps Graphic file (type eps)
+<MIMO_receiver_2.eps>
+File: MIMO_receiver_2.eps Graphic file (type eps)
+ <MIMO_receiver_2.eps>
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 19--19
+[] 
+ []
+
+[19] [20]) [21]
 ("D:\kienluen\Documents\Uni\EEI WS1213\MIMOCom\Tutorial\MIMOCom_Tutorial.aux") 
 ) 
 Here is how much of TeX's memory you used:
- 10255 strings out of 494046
- 187966 string characters out of 3151625
- 255339 words of memory out of 3000000
- 13336 multiletter control sequences out of 15000+200000
- 13346 words of font info for 53 fonts, out of 3000000 for 9000
+ 10305 strings out of 494046
+ 189911 string characters out of 3151625
+ 255357 words of memory out of 3000000
+ 13350 multiletter control sequences out of 15000+200000
+ 15418 words of font info for 61 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 56i,20n,55p,439b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,465b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on MIMOCom_Tutorial.dvi (13 pages, 51680 bytes).
+Output written on MIMOCom_Tutorial.dvi (21 pages, 77420 bytes).

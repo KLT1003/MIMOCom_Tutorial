@@ -1,0 +1,65 @@
+\subsection*{Gaussian Distribution, Entropy and Capacity}
+\begin{align*}
+	&\text{- Data rate}& \\
+	&\text{- Reliability (BER, transmit power)}& \\
+	&C = \ld\left(1+\SNR\right)& \\
+	&\text{Differential Entropy: } h\left(x\right)=-\int\limits_{-\infty}^{\infty}f_{x}\left(x\right)\ld\left(f_{x}\left(x\right)\right)\mathrm{d}x& \\
+	&C=\max\left(\mathrm{I}\left(x,y\right)\right)=\max\left(h\left(y\right)-h\left(n\right)\right)& \\
+	&\qquad\text{maximized for $h\left(y\right)$ Gaussian}& \\
+	&\text{noise$\quad\rightarrow\quad$average power is .......$\quad\rightarrow\quad$Gaussian is the most random noise}& \\
+	&\text{signal$\quad\rightarrow\quad$using shaping techniques we get Gaussian distribution}& \\
+	&C=\max\left(h\left(y\right)-h\left(n\right)\right)=\frac{1}{2}\ld\left(2\pi e\sigma_{y}^{2}\right)-\frac{1}{2}\ld\left(2\pi e\sigma_{n}^{2}\right)\overset{\sigma_{y}^{2}=\sigma_{x}^{2}+\sigma_{n}^{2}}{=}\frac{1}{2}\ld\left(1+\frac{\sigma_{x}^{2}}{\sigma_{n}^{2}}\right)& \\
+\end{align*}
+\begin{align*}
+	&\text{water-filing: }\frac{P_{i}}{P}=
+	\begin{cases}
+	\frac{1}{\gamma_{0}}-\frac{\sigma_{n}^{2}}{P\|H_{i}\|^{2}} & \frac{\|H_{i}\|^{2}P}{\sigma_{n}^{2}}>\gamma_{0}\\
+	0 & \frac{\|H_{i}\|^{2}P}{\sigma_{n}^{2}}\le\gamma_{0}\quad\rightarrow\quad\text{channel i is too bad, low SNR}
+	\end{cases}& \\
+	&P_{i}=\text{TX power of channel i}& \\
+	&P=\text{total TX power}& \\
+	&H_{i}=\text{gain of channel i}& \\
+	&\sigma_{n}^{2}=N_{0}\cdot B& \\
+	&\text{Channels}=
+	\begin{cases}
+	\text{AWGN:}\qquad\includegraphics[width=0.25\textwidth]{AWGN_channel.eps} & C_{T}=B\ld\left(1+\frac{\sigma_{x}^{2}}{\sigma_{n}^{2}}\right)\frac{\mathrm{bit}}{\mathrm{s}} \\
+	\text{flat fading:}\qquad\includegraphics[width=0.3\textwidth]{flatfading_channel.eps} & C_{T}=B\ld\left(1+\frac{h^{2}\sigma_{x}^{2}}{\sigma_{n}^{2}}\right) \\
+	\text{frequency selective:}\qquad\includegraphics[width=0.3\textwidth]{frequencyselective_channel.eps} & \\
+	\end{cases}& \\
+	&\includegraphics[width=0.5\textwidth]{frequencyselective_channel_2.eps}& \\
+	&H_{i}\left(f\right)=\mathrm{const.}\quad\rightarrow\quad\text{Water-filling algorithm}& \\
+	&\quad\qquad\qquad\qquad\rightarrow\quad\text{Allocate more power to better (with highter SNR) channels}& \\
+	&\mathrm{dB}
+	\begin{cases}
+	\text{comparison: power $P_{1}$, $P_{2}\quad\rightarrow\quad P_{2}$ has $10\log\frac{P_{2}}{P_{1}}\mathrm{dB}$ more power than $P_{1}$} \\
+	\text{absolute power: $\mathrm{dBm}$, $P_{2}=10\mathrm{W},\quad P_{1}=1\mathrm{W}\quad\rightarrow\quad P_{2}=10\log 10=10\mathrm{dB}$}
+	\end{cases}& \\
+	&\includegraphics[width=1\textwidth]{waterfilling.eps}& \\
+\end{align*}
+\begin{align*}
+	&\gamma_{i}=\text{SNR of $i$th channel}& \\
+	&P_{i}=\text{allocated power to the $i$th channel}& \\
+	&\frac{P_{i}}{P}=
+	\begin{cases}
+	\frac{1}{\gamma_{0}}-\frac{1}{\gamma_{i}} & \frac{\left|H_{i}\right|^{2}P}{\sigma_{n}^{2}}=\frac{\left|H_{i}\right|^{2}P}{N_{0}B}\ge\gamma_{0} \\
+	0 & \text{otherwise}
+	\end{cases}& \\
+	&\sigma_{n}^{2}=N_{0}B\quad\text{with noise power $\sigma_{n}^{2}$ and PSD of noise $N_{0}$}& \\
+	&H_{i}=\text{transfer function (channel gain) of $i$th channel}& \\
+	&\text{Constraint:}\quad\sum_{i=1}^{3}P_{i}=P\quad\text{total transmit power}& \\
+	&\sum_{i=1}^{3}P_{i}=P\quad\rightarrow\quad\sum_{i=1}^{3}\left(\frac{1}{\gamma_{0}}-\frac{1}{\gamma_{i}}\right)P=P\quad\rightarrow\quad\boxed{\sum_{i=1}^{3}\left(\frac{1}{\gamma_{0}}-\frac{1}{\gamma_{i}}\right)P=1}& \\
+	&\gamma_{1}=\frac{\left|H_{1}\right|^{2}P}{N_{0}B}=\frac{1\cdot 10^{-3}}{10^{-11}\cdot 1ß^{7}}\quad\rightarrow\quad\gamma_{1}=10\quad\rightarrow\quad\text{best channel}& \\
+	&\gamma_{2}=\frac{\left|H_{2}\right|^{2}P}{N_{0}B}=10H_{2}^{2}\quad\rightarrow\quad\gamma_{2}=2,5& \\
+	&\gamma_{3}=\frac{\left|H_{3}\right|^{2}P}{N_{0}B}=10H_{3}^{2}\quad\rightarrow\quad\gamma_{3}=0,9\quad\rightarrow\quad\text{worst channel}& \\
+	&\sum_{i=1}^{3}\left(\frac{1}{\gamma_{0}}-\frac{1}{\gamma_{i}}\right)=1\quad\Rightarrow\quad\frac{3}{\gamma_{0}}=1+\frac{1}{\gamma_{1}}+\frac{1}{\gamma_{2}}+\frac{1}{\gamma_{3}}\quad\rightarrow\quad\gamma_{0}=1,15\quad\text{(water level)}& \\
+	&\qquad\rightarrow\text{water level check}\quad\rightarrow\quad\gamma_{i}>\gamma_{0}\forall i& \\
+	&\gamma_{1}=10>\gamma_{0}\quad\checkmark& \\
+	&\gamma_{2}=2,5>\gamma_{0}\quad\checkmark& \\
+	&\gamma_{3}=0,9<\gamma_{0}\quad\lightning\quad\rightarrow\quad\text{no power can be allocated to channel 3}& \\
+	&\sum_{i=1}^{2}\left(\frac{1}{\gamma_{0}}-\frac{1}{\gamma_{i}}\right)=1\quad\rightarrow\quad\frac{2}{\gamma_{0}}=1+\frac{1}{10}+\frac{1}{2,5}\quad\rightarrow\quad\gamma_{0}=1,33& \\
+	&\gamma_{1}=10>\gamma_{0}\quad\checkmark& \\
+	&\gamma_{2}=2,5>\gamma_{0}\quad\checkmark& \\
+	&\quad\rightarrow\quad C_{\mathrm{T}}=B\sum\limits_{i=1}^{2}\ld\left(1+\frac{\left|H_{1}\right|^{i}P}{N_{0}B}\right)=B\sum\limits_{i=1}^{2}\ld\left(1+\frac{\gamma_{i}}{\gamma_{0}}-1\right)=B\sum\limits_{i=1}^{2}\ld\left(\frac{\gamma_{i}}{\gamma_{0}}\right)& \\
+	&\qquad C_{\mathrm{T}}=10^{7}\left(\ld\left(\frac{10}{1,33}\right)+\ld\left(\frac{2,5}{1,33}\right)\right)\quad\rightarrow\quad C_{\mathrm{T}}=38,2\text{ Mbits/s}& \\
+	&\qquad C_{\mathrm{T}}=B\ld\left(1+\frac{S}{N}\right)\quad\text{Shannon formula}& \\
+\end{align*}

@@ -1,0 +1,18 @@
+\section*{Problem 11 - Transmit and receive diversity}
+\begin{align*}
+	& \text{The standard definition of outage probability:} \\
+	& \quad\text{The average rate is \uline{lower} than a specific value.} \\
+	& \text{Alternative definition:} \\
+	& \quad\text{The error rate \uline{exceeds} a specific value.} \\
+	& P_b=10^{-4}\quad\&\quad\text{BPSK modulation} \\
+	& \quad\rightarrow\quad P_b\left(\gamma_0\right)=\mathrm{Q}\left(\sqrt{2\gamma_0}\right) \\
+	& \quad\rightarrow\quad 10^{-4}=\mathrm{Q}\left(\sqrt{2\gamma_0}\right)\quad\rightarrow\quad\gamma_0=\frac{1}{2}\left(\mathrm{Q_{???}}\left(10^{-4}\right)\right)^2 \\
+	& \quad\rightarrow\quad\gamma_0=6,9155\quad\rightarrow\quad\gamma_0=8,4\,\mathrm{dB} \\
+	& \quad\rightarrow\quad P_{out}=P_e\left(\gamma_{total}<\gamma_0\right)=P\left(\gamma_{out}<6,9155\right) \\
+	& \text{from lecture notes:} \\
+	& \quad\rightarrow\quad{p_\gamma}_{total}\left(x\right)=\frac{x^{N_R-1}e^{-\frac{\lambda}{\bar{\gamma}}}}{\gamma^{-N_R}\left(N_R-1\right)!} \\
+	& \quad\text{pdf of total SNR from MRC with i.i.d Rayleigh} \\
+	& \rightarrow P_{out}=P_e\left(\gamma_{total}<6,9155\right)=\int\limits_0^{6,9155}\frac{x^{N_R-1}e^{-\frac{\lambda}{\bar{\gamma}}}}{\gamma^{-N_R}\left(N_R-1\right)!}\mathrm{d}x= \\
+	& \qquad=1-e^{-\frac{6,9155}{10}}\sum\limits_{k=1}^3\frac{\left(\frac{6,9155}{10}\right)^{k-1}}{\left(k-1\right)!}=0,033=3,3\% \\
+	& \qquad\bar{\gamma}=10\qquad N_R=3
+\end{align*}

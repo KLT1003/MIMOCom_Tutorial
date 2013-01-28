@@ -64,5 +64,169 @@
 				\text{with feedback}
 			\end{cases}
 	\end{cases} \\
+\end{align*}
+\begin{align*}
 	& \text{Linear equalizer:} \\
+	& \includegraphics[width=1\textwidth]{linear_equalizer.eps} \\
+	& \mathbf{H}\in\mathbb{C}^{N_R\times N_T};\qquad\mathbf{F}\in\mathbb{C}^{N_T\times N_R} \\
+	& \mathbf{H}=
+	\begin{pmatrix}
+	0,2 & -0,2 \\
+	0,1 & 0,4 \\
+	1 & 0,2
+	\end{pmatrix},\qquad\frac{\sigma_x^2}{\sigma_n^2}=10 \\
+	& N_R>N_T\quad\rightarrow\quad \mathbf{F}=\left(\mathbf{H}^H\mathbf{H}\right)^{-1}\cdot\mathbf{H}^H\quad\rightarrow\quad\text{left Moore-Penrose pseudo-inverse} \\
+	& \text{received signal: }r=\mathbf{FH}x+\mathbf{F}n\quad\rightarrow\quad\text{drawback: noise amplification} \\
+	& r=\mathbf{FH}x+\mathbf{F}n=\underbrace{\left(\mathbf{H}^H\mathbf{H}\right)^{-1}\mathbf{H}^H\mathbf{H}}_{\mathbf{I}}x+\mathbf{F}n=x+\mathbf{F}n\quad\rightarrow\quad\text{no interference} \\
+	& \rightarrow\quad\text{error signal: }e=\mathbf{F}n\quad\rightarrow\quad\phi_{ee}=ee^H=\mathbf{F}\underbrace{nn^H}_{\sigma_n^2\mathbf{I}}\mathbf{F}^H \\
+	& \qquad\rightarrow\quad nn^H=\sigma_n^2\mathbf{I}\quad\text{white noise}
+\end{align*}
+\begin{align*}
+	& \rightarrow\quad\phi_{ee}^{ZF}=\sigma_n^2\mathbf{FF}^H\quad\rightarrow\quad\phi_{ee}^{ZF}=\sigma_n^2
+	\begin{pmatrix}
+	1,13 & -0,94 \\
+	-0,94 & 4,95
+	\end{pmatrix} \\
+	& \sigma_e^2=\tr\left(\phi_{ee}^{ZF}\right)=\sigma_n^2\left(1,13+4,95\right) \\
+	& \Rightarrow\sigma_e^2=\sigma_n^2\cdot 6,1 \\
+	& \text{Now determine $\mathbf{F}$ such that the error-variance is minimal!} \\
+	& \rightarrow\quad\text{MMSE}\quad\rightarrow\quad\mathbf{F}=\left(\mathbf{H}^H\mathbf{H}+\frac{\sigma_n^2}{\sigma_x^2}\mathbf{I}\right)^{-1}\underbrace{\mathbf{H}^H}_{\substack{\text{matched}\\ \text{filter}}};\qquad\frac{\sigma_x^2}{\sigma_n^2}=10 \\
+	& \Rightarrow\text{for low SNR: MMSE} \\
+	& \Rightarrow\text{for high SNR: ZF} \\
+	& \rightarrow\mathbf{F}=
+	\begin{pmatrix}
+	0,31 & -0,13 & 0,85 \\
+	-0,77 & 1,25 & 0,086
+	\end{pmatrix} \\
+	& \rightarrow\text{from lecture notes:} \\
+	& \quad\rightarrow\quad\phi_{ee}=\sigma_n^2\left(\mathbf{H}^H\mathbf{H}+\frac{\sigma_n^2}{\sigma_x^2}\mathbf{I}\right)^{-1}\quad\rightarrow\quad\phi_{ee}^{MMSE}=\sigma_n^2
+	\begin{pmatrix}
+	0,97 & -0,57 \\
+	-6,57 & 3,28
+	\end{pmatrix} \\
+	& \quad\rightarrow\quad\text{total error variance = }\tr\left(\phi_{ee}\right) \\
+	& \qquad\Rightarrow\quad\sigma_e^2=4,25\sigma_n^2 \\
+	& \text{End-to-end channel: }\mathbf{K=FH=}
+	\begin{pmatrix}
+	0,9 & 0,06 \\
+	0,06 & 0,67
+	\end{pmatrix} \\
+	& \text{residual interference in off-diagonal elements} \\
+	&	\text{diagonal elements should be 1, but are not $\Rightarrow$ biased!} \\
+	& \rightarrow\text{solution:}\quad\rightarrow\quad\text{remove bias by multiplying with }\mathbf{C}=
+	\begin{pmatrix}
+	\frac{1}{0,9} & 0 \\
+	0 & \frac{1}{0,67}
+	\end{pmatrix} \\
+	& \rightarrow\mathbf{C}=
+	\begin{pmatrix}
+	1,11 & 0 \\
+	0 & 1,49
+	\end{pmatrix} \\
+	& r'=\mathbf{C}r=
+	\begin{pmatrix}
+	1,11 & 0 \\
+	0 & 1,49
+	\end{pmatrix}
+	\begin{pmatrix}
+	0,9 & 0,06 \\
+	0,06 & 0,67
+	\end{pmatrix}x+
+	\begin{pmatrix}
+	1,11 & 0 \\
+	0 & 1,49
+	\end{pmatrix}\mathbf{F}n=\\
+	& =
+	\begin{pmatrix}
+	1 & 0,07 \\
+	0,09 & 1
+	\end{pmatrix}x+
+	\begin{pmatrix}
+	1,11 & 0 \\
+	0 & 1,49
+	\end{pmatrix}\mathbf{F}n \\
+	& \text{from lecture notes:} \\
+	& \qquad\phi_{e'e'}=\sigma_x^2\left(\mathbf{I}+\left(\mathbf{C-I}\right)\mathbf{K}^H\mathbf{C}^H-\mathbf{CK}\right);\qquad\frac{\sigma_x^2}{\sigma_n^2}=10 \\
+	& \qquad\Rightarrow\quad\sigma_x^2
+	\begin{pmatrix}
+	0,11 & -0,05 \\
+	-0,05 & 0,49
+	\end{pmatrix}=\sigma_n^2
+	\begin{pmatrix}
+	1,1 & -0,5 \\
+	-0,5 & 4,5
+	\end{pmatrix} \\
+	& \qquad\rightarrow\quad\sigma_e'^2=\tr\left(\phi_{e'e'}\right)=6\sigma_n^2
+\end{align*}
+\begin{align*}
+	& \text{Decision feedback:} \\
+	& \includegraphics[width=1\textwidth]{decisionfeedback_equalizer.eps} \\
+	& \mathbf{H}\in\mathbb{C}^{N_R\times N_T};\qquad\mathbf{F}\in\mathbb{C}^{N_T\times N_R} \\
+	& \text{drawback: propagation of error when errors predictions are not accurate} \\
+	& \left[\mathbf{L,D}\right]=???\left(\mathbf{H}^H\mathbf{H}\right)\quad\text{Cholesky factorization} \\
+	& \mathbf{H}^H\mathbf{H}=
+	\begin{pmatrix}
+		1,03 & 0,2 \\
+		0,2 & 0,24
+	\end{pmatrix}\quad\rightarrow\quad\mathbf{L}=
+	\begin{pmatrix}
+	1 & 0 \\
+	0,19 & 1
+	\end{pmatrix},\qquad\mathbf{D}=
+	\begin{pmatrix}
+	1,03 & 0 \\
+	0 & 0,2
+	\end{pmatrix} \\
+	& \qquad\text{feedforward filter:}\quad\mathbf{F=D}^{-1}\mathbf{C}^{-H}\mathbf{H}^H=
+	\begin{pmatrix}
+	0,23 & 0,02 & 0,96 \\
+	-0,99 & 1,98 & 0,99
+	\end{pmatrix} \\
+	& \qquad\text{feedback filter:}\quad\mathbf{B=C-I}=
+	\begin{pmatrix}
+	1 & 0 \\
+	0,19 & 1
+	\end{pmatrix}-
+	\begin{pmatrix}
+	1 & 0 \\
+	0 & 1
+	\end{pmatrix}=
+	\begin{pmatrix}
+	0 & 0 \\
+	0,19 & 0
+	\end{pmatrix}
+\end{align*}
+\begin{align*}
+	& \text{MMSE-DFE:} \\
+	& \mathbf{LDL}^H=\mathbf{H}^H\mathbf{H}+\frac{\sigma_n^2}{\sigma_x^2}\mathbf{I}=
+	\begin{pmatrix}
+	1,15 & 0,2 \\
+	0,2 & 0,34
+	\end{pmatrix}
+	\quad\rightarrow\quad\left(\mathbf{L,D}\right)\rightarrow \left(\mathbf{H}^H+\frac{\sigma_n^2}{\sigma_x^2}\mathbf{I}\right) \\
+	& \rightarrow\quad\mathbf{L}=
+	\begin{pmatrix}
+	1 & 0 \\
+	0,17 & 1
+	\end{pmatrix},\quad\mathbf{D}=
+	\begin{pmatrix}
+	1,15 & 0 \\
+	0 & 0,31
+	\end{pmatrix} \\
+	& \rightarrow\text{Feedforward filter: }\mathbf{F=C}\left|\mathbf{H}^H\mathbf{H}+\frac{\sigma_n^2}{\sigma_x^2}\mathbf{I}\right|^{-1}\mathbf{H}^H=
+	\begin{pmatrix}
+	0,19 & 0,21 & 1,13 \\
+	0,005 & 0,15 & 0,48
+	\end{pmatrix} \\
+	& \rightarrow\text{Feedback filter: }\mathbf{B=L-I}=
+	\begin{pmatrix}
+	0 & 0 \\
+	0,1739 & 0
+	\end{pmatrix} \\
+	& \rightarrow\text{Error covariance matrix: }\phi_{ee}=\sigma_n^2\mathbf{D}^{-1}=\sigma_n^2
+	\begin{pmatrix}
+	0,87 & 0 \\
+	0 & 3,28
+	\end{pmatrix} \\
+	& \rightarrow\quad\sigma_e^2=\tr\left(\phi_{ee}\right)=4,15\sigma_n^2
 \end{align*}
